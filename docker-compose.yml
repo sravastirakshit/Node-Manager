@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nodemanager-docker-compose-container:
+    image: nodemanager-docker-app:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/nodemanager-docker-app
+    ports:
+      - "8080:8080"
