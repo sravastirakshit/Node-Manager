@@ -26,6 +26,13 @@ The application contains below APIs (Exposed via Swagger at : http://localhost:8
 * GET /api/node/{id}/children -> To fetch all nested children node of a particular node, Solution for #1 problem statement
 *  DELETE /api/node/{id} -> This API is responsible for deleting a node and its nested children if any
 
+Assumptions
+* There is only one root node
+* Each node has only one parent (except root node)
+* Root node cannot be moved below any other node (since that breaks the tree structure)
+* A node cannot be moved below its children or sub children
+* Deleting a node automatically deletes it children and sub children if any
+
 # Deployment
 * Build the application from pom.xml using 'mvn package'. Run standalone using 'java -jar nodeManager.jar'
 * For running in Docker Compose : Open Docker terminal, go to project directory and run command 'docker-compose up'
